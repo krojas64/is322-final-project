@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Tabs from './Tabs';
 import Accounts from './Accounts';
 import Transactions from './Transactions';
+import PersonalTransaction from './PersonalTransaction';
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
                 <div>
                     <Route path="/" exact component={Accounts} />
                     <Route path="/transactions" exact component={Transactions} />
+                    <Route path="/page/:id" component={PersonalTransaction} />
                 </div>
             </BrowserRouter>
         </div>
