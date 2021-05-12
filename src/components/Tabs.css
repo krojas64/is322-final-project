@@ -9,11 +9,17 @@
 
 .bank-name {
     font-size: x-large;
+    
+}
+
+.bg-success {
+    width: auto;
     padding-top: 1px;
-    padding-left: 10px;
+    margin: 8px;
 }
 
 .nav-link {
     color: white;
-    margin-left: 50px;
+    margin: 8px;
+    padding: 5px;
 }
