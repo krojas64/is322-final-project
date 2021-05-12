@@ -1,0 +1,19 @@
+.page-tabs {
+    background-color: rgb(54, 54, 54);
+}
+
+.nav-item {
+    color: white;
+    font-size: large;
+}
+
+.bank-name {
+    font-size: x-large;
+    padding-top: 1px;
+    padding-left: 10px;
+}
+
+.nav-link {
+    color: white;
+    margin-left: 50px;
+}
