@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 
@@ -7,19 +8,40 @@ import Accounts from './Accounts';
 import Transactions from './Transactions';
 import PersonalTransaction from './PersonalTransaction';
 
-const App = () => {
-    return (
-        <div className="container">
-            <BrowserRouter>
-                <Tabs />
-                <div>
-                    <Route path="/" exact component={Accounts} />
-                    <Route path="/transactions" exact component={Transactions} />
-                    <Route path="/page/:id" component={PersonalTransaction} />
-                </div>
-            </BrowserRouter>
-        </div>
-    )
+class App extends React.Component {
+    state = {
+        accounts: [],
+        errorMessage: '',
+    }
+
+    componentDidMount() {
+        this.getData();
+    }
+
+    getData() {
+        axios.get('https://my-json-server.typicode.com/krojas64/final-db/accounts')
+        .then(response => {
+            this.setState({ accounts: response.data });
+            console.log(this.state.accounts);
+        }).catch(error => {
+            this.setState({ errorMessage: error.message });
+        });
+    }
+
+    render() {
+        return (
+            <div className="container">
+                <BrowserRouter>
+                    <Tabs />
+                    <div>
+                        <Route path="/" exact component={Accounts} />
+                        <Route path="/transactions" component={Transactions} />
+                        <Route path="/page/:id" component={PersonalTransaction} />
+                    </div>
+                </BrowserRouter>
+            </div>
+        )
+    }
 }
 
 export default App;
