@@ -13,7 +13,7 @@ class Accounts extends React.Component {
                         <div className="col border">
                             <div className="row">
                                 <div className="col">
-                                    <div className="account-name">
+                                    <div className="account-name bg-info rounded">
                                         {this.props.accounts[0].name} 
                                     </div>
                                     <div className="balance">
@@ -21,14 +21,14 @@ class Accounts extends React.Component {
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <CreateTransaction />
+                                    <CreateTransaction id={this.props.accounts[0].id} />
                                 </div>
                             </div>
                         </div>
                         <div className="col border">
                             <div className="row">
                                 <div className="col">
-                                    <div className="account-name">
+                                    <div className="account-name bg-info rounded">
                                         {this.props.accounts[1].name} 
                                     </div>
                                     <div className="balance">
@@ -36,7 +36,7 @@ class Accounts extends React.Component {
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <CreateTransaction />
+                                    <CreateTransaction id={this.props.accounts[1].id} />
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@ class Accounts extends React.Component {
                         <div className="col border">
                             <div className="row">
                                 <div className="col">
-                                    <div className="account-name">
+                                    <div className="account-name bg-info rounded">
                                         {this.props.accounts[2].name} 
                                     </div>
                                     <div className="balance">
@@ -53,14 +53,14 @@ class Accounts extends React.Component {
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <CreateTransaction />
+                                    <CreateTransaction id={this.props.accounts[2].id} />
                                 </div>
                             </div>
                         </div>
                         <div className="col border">
                             <div className="row">
                                 <div className="col">
-                                    <div className="account-name">
+                                    <div className="account-name bg-info rounded">
                                         {this.props.accounts[3].name} 
                                     </div>
                                     <div className="balance">
@@ -68,7 +68,7 @@ class Accounts extends React.Component {
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <CreateTransaction />
+                                    <CreateTransaction id={this.props.accounts[3].id} />
                                 </div>
                             </div>
                         </div>

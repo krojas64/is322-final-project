@@ -18,7 +18,10 @@ class Transactions extends React.Component {
                             Reason: {char.reason}
                         </div>
                         <div className="col">
-                            Amount: {char.amount}
+                            Amount:  
+                            <div className="amount badge badge-info badge-pull">
+                            {char.amount}
+                            </div>
                         </div>
                     </div>
                 </li>

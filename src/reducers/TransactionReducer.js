@@ -43,7 +43,18 @@ const transactionReducer = (state = DEFAULT_STATE, action) => {
     console.log(newState)
     switch (action.type) {
         case 'ADD_TRANSACTION':
-            return newState;
+            const transaction = action.payload;
+            const {id} = action.payload;
+            //console.log(transaction);
+            //console.log(id);
+            const acct = state.transactions.find(act => String(act.id) === String(id));
+            //console.log(acct);
+            //console.log(state.transactions);
+            //console.log(acct.name);
+            transaction.name = acct.name;
+            state.transactions.push(transaction);
+            console.log(state);
+            return state;
 
 
         default:

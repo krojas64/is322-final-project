@@ -6,25 +6,25 @@ import { AddTransaction } from '../actions';
 class CreateTransaction extends React.Component {
 
     state = {
-        name: '',
+        reason: '',
         amount: '',
     }
 
     onFormSubmit = (event) => {
         event.preventDefault();
-        //this.props.AddTransaction(this.state.name, this.state.amount);
-        this.setState({name: '', amount: ''})
+        this.props.AddTransaction(this.state.reason, this.props.id, this.state.amount);
+        this.setState({reason: '', amount: ''})
     }
 
     render() {
         return (
             <form onSubmit={this.onFormSubmit} style={{padding: '0 12px 12px'}}>
                 <div className="form-group">
-                    <label>Name</label>
+                    <label>Transaction Reason</label>
                     <input type="text" className="form-control"
-                        name="name"
-                        value={this.state.name}
-                        onChange={event => this.setState({name: event.target.value})}>
+                        name="reason"
+                        value={this.state.reason}
+                        onChange={event => this.setState({reason: event.target.value})}>
                     </input>
                 </div>
 
@@ -43,4 +43,4 @@ class CreateTransaction extends React.Component {
     }
 }
 
-export default CreateTransaction;
+export default connect(null, {AddTransaction})(CreateTransaction);

@@ -1,8 +1,8 @@
-export const AddTransaction = (name, amount) => {
+export const AddTransaction = (reason, id, amount) => {
     return {
         type: 'ADD_TRANSACTION',
         payload: {
-            name, amount,
+            reason, id, amount,
         }
     }
 };

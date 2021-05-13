@@ -1,9 +1,13 @@
 .account-name {
     font-size: x-large;
     margin: 20px;
+    padding-left: 10px;
+    color: white;
 }
 
 .balance {
     font-size: large;
     margin: 20px;
+    padding-left: 5px;
+    color: #036a8a;
 }
