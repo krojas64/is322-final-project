@@ -10,7 +10,17 @@ class Transactions extends React.Component {
         return TransactionList.map((char,index) => {
             return (
                 <li className="list-group-item" key={index}>
-                    <Link to={`page/${char.id}`}>{char.name}</Link> / Reason: {char.reason} / Amount: {char.amount} {char.id}
+                    <div className="row">
+                        <div className="col">
+                            <Link to={`page/${char.id}`}>{char.name}</Link>  
+                        </div>
+                        <div className="col">
+                            Reason: {char.reason}
+                        </div>
+                        <div className="col">
+                            Amount: {char.amount}
+                        </div>
+                    </div>
                 </li>
             );
         });

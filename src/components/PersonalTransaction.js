@@ -1,21 +1,41 @@
 import React from 'react';
 import CreateTransaction from './CreateTransaction';
 import { connect } from 'react-redux';
+import { render } from '@testing-library/react';
 
 class PersonalTransaction extends React.Component {
+
+    returnAccount = () => {
+        let currentID = this.props.match.params.id;
+        let accountList = this.props.accounts;
+        let retAcc = []
+        accountList.forEach((item) => {
+            console.log(item);
+            if (currentID === String(item.id)){
+                console.log("Reached here!")
+                retAcc = [item.name, item.id, item.balance];
+            }
+        })
+        return retAcc;
+    }
+
+
     render() {
+        let TransactionList = this.props.transactions;
+        let currentID = this.props.match.params.id;
+        let currentAcc = this.returnAccount();
+        console.log(currentAcc);
         console.log(this.props.match.params.id)
         console.log(this.props.accounts)
         return (
             <div className="personal-page">
-                <h3>This is the page for account number {this.props.match.params.id}</h3>
                 <div className="row">
                     <div className="col">
                         <div className="account-name">
-                            {this.props.accounts[0].name} 
+                            {currentAcc[0]}
                         </div>
                         <div className="balance">
-                            Balance: {this.props.accounts[0].balance}
+                            Balance: {currentAcc[2]}
                         </div>
                     </div>
                     <div className="col">
