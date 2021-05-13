@@ -2,12 +2,13 @@ import React from 'react';
 //import axios from 'axios';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-
 import Tabs from './Tabs';
 import Accounts from './Accounts';
 import Transactions from './Transactions';
 import PersonalTransaction from './PersonalTransaction';
 import EditAccount from './EditAccount';
+
+import './App.css'
 
 class App extends React.Component {
 

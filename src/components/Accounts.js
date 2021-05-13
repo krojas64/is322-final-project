@@ -5,77 +5,31 @@ import './Accounts.css';
 
 class Accounts extends React.Component {
     render() {
+        let accountList = this.props.accounts;
         console.log(this.props.accounts)
-        return (
-            <div className="accounts-page">
+        return accountList.map((char,index) => {
+            return (
                 <div className="container">
                     <div className="row">
                         <div className="col border">
                             <div className="row">
                                 <div className="col">
                                     <div className="account-name bg-info rounded">
-                                        {this.props.accounts[0].name} 
+                                        {char.name} 
                                     </div>
                                     <div className="balance">
-                                        Balance: {this.props.accounts[0].balance}
+                                        Balance: {char.balance}
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <CreateTransaction id={this.props.accounts[0].id} />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col border">
-                            <div className="row">
-                                <div className="col">
-                                    <div className="account-name bg-info rounded">
-                                        {this.props.accounts[1].name} 
-                                    </div>
-                                    <div className="balance">
-                                        Balance: {this.props.accounts[1].balance}
-                                    </div>
-                                </div>
-                                <div className="col">
-                                    <CreateTransaction id={this.props.accounts[1].id} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col border">
-                            <div className="row">
-                                <div className="col">
-                                    <div className="account-name bg-info rounded">
-                                        {this.props.accounts[2].name} 
-                                    </div>
-                                    <div className="balance">
-                                        Balance: {this.props.accounts[2].balance}
-                                    </div>
-                                </div>
-                                <div className="col">
-                                    <CreateTransaction id={this.props.accounts[2].id} />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col border">
-                            <div className="row">
-                                <div className="col">
-                                    <div className="account-name bg-info rounded">
-                                        {this.props.accounts[3].name} 
-                                    </div>
-                                    <div className="balance">
-                                        Balance: {this.props.accounts[3].balance}
-                                    </div>
-                                </div>
-                                <div className="col">
-                                    <CreateTransaction id={this.props.accounts[3].id} />
+                                    <CreateTransaction id={char.id} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        )
+            );
+        });
     }
 }
 

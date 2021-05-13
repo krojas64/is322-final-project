@@ -37,7 +37,7 @@ class CreateTransaction extends React.Component {
                     </input>
                 </div>
                 <input type="submit" className="btn btn-success" value="Deposit" />
-                <input type="submit" className="btn btn-danger float-right" value="Withdraw" />
+                <input type="button" className="btn btn-danger float-right" value="Withdraw" />
             </form>
         )
     }

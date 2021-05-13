@@ -1,4 +1,4 @@
-//import axios from 'axios';
+import axios from 'axios';
 
 /*const db_account = async () => {
     let accounts_data;
@@ -15,11 +15,11 @@
     return;
 };*/
 
-/*const db_transaction = () => {
-    let transactions = axios.get('https://my-json-server.typicode.com/krojas64/final-db/transactions');
+const db_transaction = async () => {
+    let transactions = await axios.get('https://my-json-server.typicode.com/krojas64/final-db/transactions');
 
     return transactions;
-}*/
+}
 
 const DEFAULT_STATE = {
     //accounts: db_account()
@@ -29,13 +29,13 @@ const DEFAULT_STATE = {
         { "name": "George L.", "id": 2, "balance": 745.48 },
         { "name": "Zoey A.", "id": 1, "balance": 1644.17 }
     ],
-    //transactions: db_transaction()
-    transactions: [
+    transactions: db_transaction()
+    /*transactions: [
         { "name": "Joe G.", "id": 3, "reason": "Opened Account", "amount": 354.52 },
         { "name": "Vivian E.", "id": 4, "reason": "Opened Account", "amount": 5331.00 },
         { "name": "George L.", "id": 2, "reason": "Opened Account", "amount": 745.48 },
         { "name": "Zoey A.", "id": 1, "reason": "Opened Account", "amount": 1644.17 }
-    ]
+    ]*/
 };
 
 const transactionReducer = (state = DEFAULT_STATE, action) => {

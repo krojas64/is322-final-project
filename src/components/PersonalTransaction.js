@@ -44,6 +44,9 @@ class PersonalTransaction extends React.Component {
                         <div className="account-name bg-info rounded">
                             {currentAcc[0]}
                         </div>
+                        <div className="identification">
+                            ID: {currentAcc[1]}
+                        </div>
                         <div className="balance">
                             Balance: {currentAcc[2]}
                         </div>
