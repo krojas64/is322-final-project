@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-import { AddTransaction } from '../actions';
+import { AddTransactionDeposit } from '../actions';
 
 class CreateTransaction extends React.Component {
 
@@ -12,7 +12,7 @@ class CreateTransaction extends React.Component {
 
     onFormSubmit = (event) => {
         event.preventDefault();
-        this.props.AddTransaction(this.state.reason, this.props.id, this.state.amount);
+        this.props.AddTransactionDeposit(this.state.reason, this.props.id, this.state.amount);
         this.setState({reason: '', amount: ''})
     }
 
@@ -43,4 +43,4 @@ class CreateTransaction extends React.Component {
     }
 }
 
-export default connect(null, {AddTransaction})(CreateTransaction);
+export default connect(null, {AddTransactionDeposit})(CreateTransaction);

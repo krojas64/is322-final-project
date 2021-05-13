@@ -42,20 +42,23 @@ const transactionReducer = (state = DEFAULT_STATE, action) => {
     let newState = {...state};
     console.log(newState)
     switch (action.type) {
-        case 'ADD_TRANSACTION':
+        case 'ADD_TRANSACTION_DEPOSIT':
             const transaction = action.payload;
             const {id} = action.payload;
             //console.log(transaction);
             //console.log(id);
-            const acct = state.transactions.find(act => String(act.id) === String(id));
-            //console.log(acct);
+            const acct = state.accounts.find(act => String(act.id) === String(id));
+            console.log(acct);
             //console.log(state.transactions);
             //console.log(acct.name);
             transaction.name = acct.name;
             state.transactions.push(transaction);
+            const idx = state.accounts.findIndex(act => String(act.id) === String(id));
+            console.log(idx);
+            state.accounts[idx].balance += parseFloat(transaction.amount);
             console.log(state);
             return state;
-
+        case 'ADD_TRANSACTION_WITHDRAW':
 
         default:
             return state;
