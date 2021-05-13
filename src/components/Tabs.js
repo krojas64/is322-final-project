@@ -17,7 +17,7 @@ class Tabs extends React.Component {
         return (
             <ul className='nav page-tabs'>
                 <li className='nav-item'>
-                    <div className='bank-name bg-success'>
+                    <div className='bank-name bg-success rounded'>
                     First Bank of Fleeca
                     </div>
                 </li>

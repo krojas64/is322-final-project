@@ -1,17 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const Transactions = props => {
-    return (
-        <div className="transactions-page">
-            <h3>TRANSACTIONS WILL BE DONE HERE!</h3>
-            <ul>
-                <li>FAKE LINK 5</li>
-                <li>FAKE LINK 6</li>
-                <li><Link to={'page/1'}>Page 1</Link></li>
-            </ul>
-        </div>
-    )
+class Transactions extends React.Component {
+
+    render(){
+        let TransactionList = this.props.transactions;
+        console.log(TransactionList);
+        return TransactionList.map((char,index) => {
+            return (
+                <li className="list-group-item" key={index}>
+                    <Link to={`page/${char.id}`}>{char.name}</Link> / Reason: {char.reason} / Amount: {char.amount} {char.id}
+                </li>
+            );
+        });
+    }
 }
 
-export default Transactions;
+const mapStateToProps = state => {
+    return {
+        transactions: state.transaction.transactions
+    };
+};
+
+export default connect(mapStateToProps)(Transactions);

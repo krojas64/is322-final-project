@@ -11,10 +11,11 @@ import PersonalTransaction from './PersonalTransaction';
 class App extends React.Component {
     state = {
         accounts: [],
+        transactions: [],
         errorMessage: '',
     }
 
-    componentDidMount() {
+    /*componentDidMount() {
         this.getData();
     }
 
@@ -26,7 +27,15 @@ class App extends React.Component {
         }).catch(error => {
             this.setState({ errorMessage: error.message });
         });
-    }
+
+        axios.get('https://my-json-server.typicode.com/krojas64/final-db/transactions')
+        .then(response => {
+            this.setState({ transactions: response.data });
+            console.log(this.state.transactions);
+        }).catch(error => {
+            this.setState({ errorMessage: error.message });
+        });
+    }*/
 
     render() {
         return (

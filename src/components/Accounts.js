@@ -1,59 +1,88 @@
 import React from 'react';
 import CreateTransaction from './CreateTransaction';
+import { connect } from 'react-redux';
+import './Accounts.css';
 
-
-const Accounts = props => {
-    return (
-        <div className="accounts-page">
-            <h3>THIS IS THE ACCOUNTS PAGE</h3>
-            <div className="container">
-                <div className="row">
-                    <div className="col border">
-                        <div className="row">
-                            <div className="col-xs-6">
-                                First
+class Accounts extends React.Component {
+    render() {
+        console.log(this.props.accounts)
+        return (
+            <div className="accounts-page">
+                <div className="container">
+                    <div className="row">
+                        <div className="col border">
+                            <div className="row">
+                                <div className="col">
+                                    <div className="account-name">
+                                        {this.props.accounts[0].name} 
+                                    </div>
+                                    <div className="balance">
+                                        Balance: {this.props.accounts[0].balance}
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <CreateTransaction />
+                                </div>
                             </div>
-                            <div className="col-xs-6">
-                                <CreateTransaction />
+                        </div>
+                        <div className="col border">
+                            <div className="row">
+                                <div className="col">
+                                    <div className="account-name">
+                                        {this.props.accounts[1].name} 
+                                    </div>
+                                    <div className="balance">
+                                        Balance: {this.props.accounts[1].balance}
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <CreateTransaction />
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col border">
-                        <div className="row">
-                            <div className="col-xs-6">
-                                Second
-                            </div>
-                            <div className="col-xs-6">
-                                <CreateTransaction />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col border">
-                        <div className="row">
-                            <div className="col-xs-6">
-                                Third
-                            </div>
-                            <div className="col-xs-6">
-                                <CreateTransaction />
+                    <div className="row">
+                        <div className="col border">
+                            <div className="row">
+                                <div className="col">
+                                    <div className="account-name">
+                                        {this.props.accounts[2].name} 
+                                    </div>
+                                    <div className="balance">
+                                        Balance: {this.props.accounts[2].balance}
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <CreateTransaction />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="col border">
-                        <div className="row">
-                            <div className="col-xs-6">
-                                Fourth
-                            </div>
-                            <div className="col-xs-6">
-                                <CreateTransaction />
+                        <div className="col border">
+                            <div className="row">
+                                <div className="col">
+                                    <div className="account-name">
+                                        {this.props.accounts[3].name} 
+                                    </div>
+                                    <div className="balance">
+                                        Balance: {this.props.accounts[3].balance}
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <CreateTransaction />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default Accounts;
+const mapStateToProps = state => {
+    return {
+        accounts: state.transaction.accounts
+    };
+};
+
+export default connect(mapStateToProps)(Accounts);

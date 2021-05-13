@@ -12,7 +12,7 @@ class CreateTransaction extends React.Component {
 
     onFormSubmit = (event) => {
         event.preventDefault();
-        this.props.AddTransaction(this.state.name, this.state.amount);
+        //this.props.AddTransaction(this.state.name, this.state.amount);
         this.setState({name: '', amount: ''})
     }
 
@@ -37,7 +37,7 @@ class CreateTransaction extends React.Component {
                     </input>
                 </div>
                 <input type="submit" className="btn btn-success" value="Deposit" />
-                <input type="submit" className="btn btn-danger" value="Withdraw" />
+                <input type="submit" className="btn btn-danger float-right" value="Withdraw" />
             </form>
         )
     }

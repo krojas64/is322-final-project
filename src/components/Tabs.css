@@ -9,11 +9,11 @@
 
 .bank-name {
     font-size: x-large;
-    
+    padding-left: 10px;
 }
 
 .bg-success {
-    width: auto;
+    width: 225px;
     padding-top: 1px;
     margin: 8px;
 }
