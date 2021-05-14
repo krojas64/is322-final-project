@@ -16,6 +16,12 @@ class CreateTransaction extends React.Component {
         this.setState({reason: '', amount: ''})
     }
 
+    onFormClick = (event) => {
+        event.preventDefault();
+        this.props.AddTransactionWithdraw(this.state.reason, this.props.id, this.state.amount);
+        this.setState({reason: '', amount: ''})
+    }
+
     render() {
         return (
             <form onSubmit={this.onFormSubmit} style={{padding: '0 12px 12px'}}>
@@ -37,7 +43,7 @@ class CreateTransaction extends React.Component {
                     </input>
                 </div>
                 <input type="submit" id="green" className="btn btn-success" value="Deposit" />
-                <input type="button" id="red" className="btn btn-danger float-right" value="Withdraw" />
+                <input type="button" id="red"  className="btn btn-danger float-right" value="Withdraw" />
             </form>
         )
     }
