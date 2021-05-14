@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class Transactions extends React.Component {
-
     render(){
         let TransactionList = this.props.transactions;
         console.log(TransactionList);

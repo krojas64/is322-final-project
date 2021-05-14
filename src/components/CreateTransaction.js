@@ -20,7 +20,7 @@ class CreateTransaction extends React.Component {
         return (
             <form onSubmit={this.onFormSubmit} style={{padding: '0 12px 12px'}}>
                 <div className="form-group">
-                    <label>Transaction Reason</label>
+                    <label>Transaction Reason:</label>
                     <input type="text" className="form-control"
                         name="reason"
                         value={this.state.reason}
@@ -29,15 +29,15 @@ class CreateTransaction extends React.Component {
                 </div>
 
                 <div className="form-group">
-                    <label>Amount</label>
+                    <label>Amount:</label>
                     <input type="text" className="form-control"
                         name="amount"
                         value={this.state.amount}
                         onChange={event => this.setState({amount: event.target.value})}>
                     </input>
                 </div>
-                <input type="submit" className="btn btn-success" value="Deposit" />
-                <input type="button" className="btn btn-danger float-right" value="Withdraw" />
+                <input type="submit" id="green" className="btn btn-success" value="Deposit" />
+                <input type="button" id="red" className="btn btn-danger float-right" value="Withdraw" />
             </form>
         )
     }
